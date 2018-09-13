@@ -6,13 +6,14 @@ public class Trx {
     private Integer personId;
     private long time;
     private Product product;
-    private boolean addsettle;
+    private int num;
+    private int addsettle;
 
-    public boolean isAddsettle() {
+    public int isAddsettle() {
 		return addsettle;
 	}
 
-	public void setAddsettle(boolean addsettle) {
+	public void setAddsettle(int addsettle) {
 		this.addsettle = addsettle;
 	}
 
@@ -47,4 +48,12 @@ public class Trx {
     public void setProduct(Product product) {
         this.product = product;
     }
+
+	public int getNum() {
+		return num;
+	}
+
+	public void setNum(int num) {
+		this.num = num;
+	}
 }

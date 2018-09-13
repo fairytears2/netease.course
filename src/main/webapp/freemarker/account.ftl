@@ -39,7 +39,7 @@
             <#assign total = total + (x.buyPrice?number*100)*x.buyNum/100>
             <tr>
                 <td><a href="/spring-webapp/api/show?id=${x.id}"><img src="${x.image}" alt=""></a></td>
-                <td><h4><a href="/show?id=${x.id}">${x.title}</a></h4></td>
+                <td><h4><a href="/spring-webapp/api/show?id=${x.id}">${x.title}</a></h4></td>
                 <td><span class="v-time">${x.buyTime?number_to_datetime?string("yyyy-MM-dd HH:mm")}</span></td>
                 <td><span class="v-num">${x.buyNum}</span></td>
                 <td><span class="v-unit">¥</span><span class="value">${x.buyPrice}</span></td>

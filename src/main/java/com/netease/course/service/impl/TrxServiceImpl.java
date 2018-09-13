@@ -61,11 +61,22 @@ public class TrxServiceImpl implements TrxService {
         }*/
         return isBuy;
     }
+
 	@Override
-	public void getSettleAccount(User user, Product product) {
-		// TODO Auto-generated method stub
-		
+	public List<Product> getSettleAccount(Integer userId) {
+		List<Product> productList = trxMapper.getSettleList(userId);
+		return productList;
 	}
+
+	@Override
+	public boolean setSettle(User user, Product product) {
+		boolean isSet = false;
+		if(product !=null) {
+		isSet = trxMapper.setSettleAccount(user.getId(), product);
+		}
+		return isSet;
+	}
+
 
 
 }

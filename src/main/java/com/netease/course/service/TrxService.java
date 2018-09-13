@@ -11,7 +11,9 @@ public interface TrxService {
 
     List<Product> getBuyList(Integer userId);
 
-    public void getSettleAccount(User user,Product product);
+    List<Product> getSettleAccount(Integer userId);
+    
+    boolean setSettle(User user, Product product);
     
     boolean buy(User user, List<Product> productList, Long buyTime);
 }

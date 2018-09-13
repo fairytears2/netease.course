@@ -15,6 +15,7 @@ import com.netease.course.bean.User;
 import com.netease.course.service.ProductService;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -39,10 +40,10 @@ public class ProductController {
     @RequestMapping(value="/show")
     public String show(@RequestParam("id") Integer productId,
                        @SessionAttribute(name = "user", required = false) User user,
-                       Model model) {
+                       Model model,HttpSession session) {
         Product product = productService.getProduct(user, productId);
-
         model.addAttribute("product", product);
+        session.setAttribute("productid", productId);
         System.out.println("查看");
         return "show";
     }
