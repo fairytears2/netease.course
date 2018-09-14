@@ -8,13 +8,24 @@ public class Trx {
     private Product product;
     private int num;
     private int addsettle;
+    private int price;
 
-    public int isAddsettle() {
+
+
+	public int getAddsettle() {
 		return addsettle;
 	}
 
 	public void setAddsettle(int addsettle) {
 		this.addsettle = addsettle;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
 	}
 
 	public Integer getId() {

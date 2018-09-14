@@ -44,26 +44,39 @@ public class TrxController {
     }
 
     //购物车
-    @RequestMapping(value="/settleAccount")
-    public String settleAccount(@SessionAttribute(name = "user") User user,@SessionAttribute("productid") Integer productId,Model model){
+    @RequestMapping(value="/setSettle")
+    public String setSettle(@SessionAttribute(name = "user") User user,@SessionAttribute("productid") Integer productId,Model model){
     	System.out.println("购物车");
     	System.out.println(productId);
     	Product product = productService.getProduct(user, productId);
         if (user == null || user.getUserType() == 1){
             return "redirect:/";
         }else {
-        	List<Product> settleList = trxService.getSettleAccount(user.getId());
+        	List<Product> settleList = trxService.getSettleList(user.getId());
         	for (Product pd : settleList) {
 				if(pd == product) {
 					product = null;
 				}
 			}
         	if(trxService.setSettle(user, product)) {
-        	   settleList = trxService.getSettleAccount(user.getId());
+        	   settleList = trxService.getSettleList(user.getId());
         	}        	
         	model.addAttribute("settleList", settleList);
         	return "settleAccount";
-        }
-        
+        }        
     }
+    
+    @RequestMapping(value="/settleAccount")
+    public String settleAccount(@SessionAttribute(name = "user") User user,Model model) {
+    	System.out.println(user.getId());
+    	 if (user == null || user.getUserType() == 1){
+    		 return "redirect:/";
+    	 }else {
+    		 List<Product> settleList = trxService.getSettleList(user.getId());
+    		 model.addAttribute("settleList", settleList);
+	     	 return "settleAccount";
+    	 }
+     	
+    }
+    
 }

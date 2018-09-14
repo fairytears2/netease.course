@@ -25,7 +25,7 @@
                 <a href="/spring-webapp/api/show?id=${product.id}" id="addNum" class="moreNum"><a>+</a></a></div>
             <div class="oprt f-cb">
                 <#if user && user.userType==0>
-                    <a href="/spring-webapp/api/settleAccount" class="u-btn u-btn-primary" id="add" data-id="${product.id}" data-title="${product.title}"
+                    <a href="/spring-webapp/api/setSettle" class="u-btn u-btn-primary" id="add" data-id="${product.id}" data-title="${product.title}"
                             data-price="${product.price?number?string(',###.##')}">加入购物车</a>
                     <#if product.isBuy>
                     <span class="buyprice">购买过</span>

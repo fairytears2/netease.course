@@ -25,12 +25,19 @@ public interface TrxMapper {
 			@Result(property = "buytime", column = "time" ),
 			@Result(property = "addsettle", column = "isbuy")
 		})
-	@Select("SELECT c.id, c.title, c.icon, t.num, t.time, t.price,t.isbuy  FROM content c INNER JOIN trx t ON c.id=t.contentId WHERE t.personId=#{id} AND NOT EXISTS(select isbuy from trx)")
+	@Select("SELECT c.id, c.title, c.icon, t.num, t.time, t.price  FROM content c INNER JOIN trx t ON c.id=t.contentId WHERE t.personId=#{id} AND NOT EXISTS(select isbuy from trx)")
     List<Product> getBuyList(@Param("id") Integer userId);
     
-	
-	@ResultMap("trx")
-	@Select("SELECT c.id, c.title, c.icon, t.num, t.time, t.price ,t.isbuy  FROM content c INNER JOIN trx t ON c.id=t.contentId WHERE t.personId=#{id} AND  EXISTS(select isbuy from trx))")
+	@Results( value = {
+			@Result(property = "id", column = "id" ),
+			@Result(property = "buyprice", column = "price" ),
+			@Result(property="title",column = "title"),
+			@Result(property = "num", column = "num" ),
+			@Result(property = "image", column = "icon" ),
+			@Result(property = "buytime", column = "time" ),
+			@Result(property = "addsettle", column = "isbuy")
+		})
+	@Select("SELECT c.id, c.title, c.icon, t.num, t.time, t.price  FROM content c INNER JOIN trx t ON c.id=t.contentId WHERE t.personId=#{id} AND EXISTS(select isbuy from trx)")
 	List<Product> getSettleList(@Param("id") Integer userId);
 	
 	@ResultMap("trx")

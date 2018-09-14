@@ -63,7 +63,7 @@ public class TrxServiceImpl implements TrxService {
     }
 
 	@Override
-	public List<Product> getSettleAccount(Integer userId) {
+	public List<Product> getSettleList(Integer userId) {
 		List<Product> productList = trxMapper.getSettleList(userId);
 		return productList;
 	}
