@@ -45,20 +45,6 @@ public class TrxServiceImpl implements TrxService {
             }
         }
 
-        /*for(int i = 0; i < productList.size(); i++){
-            Product product = productList.get(i);
-            int buyNum = product.getBuyNum();
-            product = productMapper.getProduct(product.getId());
-
-            String buyPrice = product.getPrice();
-            product.setBuyNum(buyNum);
-            product.setBuyPrice(buyPrice);
-            System.out.println("1111111111");
-            isBuy = trxMapper.buy(user.getId(), product, buyTime);
-            if (!isBuy) {
-                throw new RuntimeException();
-            }
-        }*/
         return isBuy;
     }
 
