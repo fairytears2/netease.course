@@ -1,4 +1,4 @@
-package com.netease.course.controller;
+ package com.netease.course.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;

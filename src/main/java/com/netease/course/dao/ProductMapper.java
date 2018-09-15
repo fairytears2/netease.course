@@ -10,6 +10,8 @@ import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
 
 import com.netease.course.bean.Product;
+import com.netease.course.utils.ConvertBlobTypeHandler;
+
 
 import java.util.List;
 
@@ -22,7 +24,7 @@ public interface ProductMapper {
 			@Result(property = "num", column = "num" ),
 			@Result(property = "image", column = "icon" ),
 			@Result(property = "summary", column = "abstract" ),
-			@Result(property = "detail", column = "text" ),
+			@Result(property = "detail", column = "text" ,typeHandler=ConvertBlobTypeHandler.class),
 			@Result(property = "trxCount", column = "trxCount" ),
 		})
 	@Select("SELECT c.*, (SELECT COUNT(*) FROM trx t WHERE t.contentId=c.id) AS trxCount FROM content c")
