@@ -12,14 +12,13 @@
     <table class="m-table m-table-row n-table g-b3">
         <colgroup><col class="img"/><col/><col class="time"/><col class="price"/></colgroup>
         <thead>
-            <tr><th><input type="checkbox" value = "全选"></th><th>内容图片</th><th>内容名称</th><th>购买时间</th><th>数量</th><th>购买价格</th><th>操作</th></tr>
+            <tr><th><input type="checkbox" value = "全选"></th><th>内容图片</th><th>内容名称</th><th>数量</th><th>购买价格</th><th>操作</th></tr>
         </thead>
         <#list settleList as x> 
         <tbody>       	
                	<td><input type="checkbox"></td>
                 <td><a href="/spring-webapp/api/show?id=${x.id}"><img src="${x.image}" alt=""></a></td>
                 <td><h4><a href="/spring-webapp/api/show?id=${x.id}">${x.title}</a></h4></td>
-                <td><span class="v-time">2016-03-12 12:12</span></td>
                 <td>
                 <button type="button">-</button>
                 <input class="v-num"  value=1 style="width:30px;text-align: center;">

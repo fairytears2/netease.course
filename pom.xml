@@ -107,7 +107,30 @@
 			<version>2.3.0</version>
 		</dependency>
   </dependencies>
+ 
   <build>
     <finalName>spring-webapp</finalName>
+     <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.3</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <uriEncoding>UTF-8</uriEncoding>
+                    <finalName>spring-webapp</finalName>
+                    <server>tomcat</server>
+                </configuration>
+            </plugin>
+        </plugins>
   </build>
 </project>

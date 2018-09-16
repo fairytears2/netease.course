@@ -2,7 +2,6 @@ package com.netease.course.service;
 
 
 
-import javax.validation.Valid;
 
 import com.netease.course.bean.Product;
 import com.netease.course.bean.User;
