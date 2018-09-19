@@ -142,7 +142,7 @@
                 <version>2.2</version>
                 <configuration>
                     <uriEncoding>UTF-8</uriEncoding>
-                    <url>http://127.0.0.1:8080/manager/text</url>
+                    <url>http://59.111.101.74:8080/manager/text</url>
                     <path>/spring-webapp</path>
 <!--                     <username>admin</username>
                     <password>admin</password> -->
