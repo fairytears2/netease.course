@@ -124,8 +124,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.3</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>1.7</source>
+                    <target>1.7</target>
                     <encoding>UTF-8</encoding>
                  	<showWarnings>false</showWarnings>
 					<showDeprecation>false</showDeprecation>
@@ -134,13 +134,13 @@
             <plugin>
                 <groupId>org.apache.tomcat.maven</groupId>
                 <artifactId>tomcat7-maven-plugin</artifactId>
-                <version>2.2</version>
+                <version>2.3</version>
                 <configuration>
                     <uriEncoding>UTF-8</uriEncoding>
                     <url>http://127.0.0.1:8080/manager/text</url>
                     <path>/spring-webapp</path>
-<!--                     <username>admin</username>
-                    <password>admin</password> -->
+                     <username>admin</username>
+                    <password>admin</password> 
                     <finalName>spring-webapp</finalName>
                     <server>tomcat</server>
                 </configuration>
@@ -152,7 +152,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.3</version>
+				<version>2.2</version>
 				<configuration>
 					<charset>UTF-8</charset>
 					<encoding>UTF-8</encoding>
